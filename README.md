@@ -23,3 +23,7 @@ Ler dois números inteiros e informar se o primeiro valor lido é maior, menor o
 ### Exercício 06
 
 Ler um número inteiro e informar se ele é divisível por 2.
+
+### Exercício 07
+
+Ler um número inteiro e informar se ele é divisível por 2 e por 3 simultaneamente.
