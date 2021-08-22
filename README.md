@@ -27,3 +27,7 @@ Ler um número inteiro e informar se ele é divisível por 2.
 ### Exercício 07
 
 Ler um número inteiro e informar se ele é divisível por 2 e por 3 simultaneamente.
+
+### Exercício 08
+
+Ler um número inteiro e informar se ele é divisível por 2 e por 3, mas que não seja divisível por 5.
