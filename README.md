@@ -1,5 +1,9 @@
 # Aprendendo Rust
 
+Uma coleção de exercícios e desafios que estou fazendo para aprender Rust, sem compromisso de ser o código mais eficiente nem o mais limpo.
+
+## Exercícios básicos
+
 ### Exercício 01
 
 Construir um projeto vazio, contendo apenas o texto Hello World
