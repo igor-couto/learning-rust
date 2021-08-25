@@ -40,3 +40,11 @@ Ler um número inteiro e informar se ele é divisível por 2 e por 3, mas que n�
 
 Desenvolver um algoritmo para ler o número do dia da semana e imprimir o seu respectivo nome por extenso. Considerar o número 1 como domingo, 2 para segunda
 etc. Caso o dia da semana não exista (menor do que 1 ou maior do que 7), exibir a mensagem: Dia da semana inválido.
+
+## Outros exercícios e desafios
+
+### YouCodeThings - When will you turn 100?
+
+Create a program that asks the user to enter their name and their age. Print out a message addressed to them that tells them the year that they will turn 100 years old.
+
+Exercício proposto pelo canal [YouCodeThings](https://www.youtube.com/watch?v=JVrvzxGUMNY)
