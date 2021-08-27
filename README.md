@@ -56,3 +56,9 @@ Os funcionários de uma empresa receberam um aumento de salário: técnicos (có
 Create a program that asks the user to enter their name and their age. Print out a message addressed to them that tells them the year that they will turn 100 years old.
 
 Exercício proposto pelo canal [YouCodeThings](https://www.youtube.com/watch?v=JVrvzxGUMNY)
+
+### YouCodeThings - Odd or Even?
+
+Ask the user for a number. Depending on whether the number is even or odd, print out an appropriate message to the user.
+
+Exercício proposto pelo canal [YouCodeThings](https://www.youtube.com/watch?v=-qOC0xad9yQ)
