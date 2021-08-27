@@ -45,6 +45,10 @@ etc. Caso o dia da semana não exista (menor do que 1 ou maior do que 7), exibir
 
 Fazer um algoritmo para ler dois números e um dos símbolos das operações: +, -, \* e /. Imprimir o resultado da operação efetuada sobre os números lidos.
 
+### Exercício 11
+
+Os funcionários de uma empresa receberam um aumento de salário: técnicos (código = 1), 50%; gerentes (código = 2), 30%; demais funcionários (código = 3), 20%. Escrever um algoritmo para ler o código do cargo de um funcionário e o valor do seu salário atual, calcular e imprimir o novo salário após o aumento)
+
 ## Outros exercícios e desafios
 
 ### YouCodeThings - When will you turn 100?
