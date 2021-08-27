@@ -41,6 +41,10 @@ Ler um número inteiro e informar se ele é divisível por 2 e por 3, mas que n�
 Desenvolver um algoritmo para ler o número do dia da semana e imprimir o seu respectivo nome por extenso. Considerar o número 1 como domingo, 2 para segunda
 etc. Caso o dia da semana não exista (menor do que 1 ou maior do que 7), exibir a mensagem: Dia da semana inválido.
 
+### Exercício 10
+
+Fazer um algoritmo para ler dois números e um dos símbolos das operações: +, -, \* e /. Imprimir o resultado da operação efetuada sobre os números lidos.
+
 ## Outros exercícios e desafios
 
 ### YouCodeThings - When will you turn 100?
