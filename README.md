@@ -49,6 +49,10 @@ Fazer um algoritmo para ler dois números e um dos símbolos das operações: +,
 
 Os funcionários de uma empresa receberam um aumento de salário: técnicos (código = 1), 50%; gerentes (código = 2), 30%; demais funcionários (código = 3), 20%. Escrever um algoritmo para ler o código do cargo de um funcionário e o valor do seu salário atual, calcular e imprimir o novo salário após o aumento)
 
+### Exercício 12
+
+Desenvolver um algoritmo para ler o valor inteiro da idade de uma pessoa e imprimir uma das mensagens: se a idade é menor que 13: Criança, se maior que 13 e menor que 20: Adolescente, se a idade maior que 20 e menor que 60: Adulto e se idade maior que 60: Idoso.
+
 ## Outros exercícios e desafios
 
 ### YouCodeThings - When will you turn 100?
