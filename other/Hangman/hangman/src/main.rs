@@ -1,16 +1,46 @@
 extern crate rand;
 
 use rand::Rng;
-use std::io;
+use std::io::{self, Write};
 
-const NOT_GUESSED_YET: char = '_';
+mod graphics;
+
 const MAX_GUESSES: u8 = 6;
 
 fn main() {
-
     let stdin = io::stdin();
-    let mut guesses: u8 = 0;    
 
+    let word = pick_a_word();
+    let mut display = "_".repeat(word.len()).chars().collect();
+    let mut guesses: Vec<char> = vec![];
+
+    println!("{}", word);
+
+    loop {
+        show_display(&display, &guesses);
+
+        let guess = get_player_input(&stdin).unwrap();
+        guesses.push(guess);
+
+        for (index, letter) in word.chars().enumerate() {
+            if letter == guess {
+                display[index] = guess;
+            }
+        }
+
+        if victory(word, &guesses) {
+            show_display(&display, &guesses);
+            break;
+        }
+
+        if game_over(guesses.len() as u8) {
+            println!("Você perdeu! A palavra era {}.\n", word);
+            break;
+        }
+    }
+}
+
+fn pick_a_word() -> &'static str {
     // TODO - ler a partir do arquivo
 
     let words: Vec<&str> = "ant baboon badger bat bear beaver camel cat clam cobra cougar
@@ -19,53 +49,53 @@ fn main() {
         otter owl panda parrot pigeon python rabbit ram rat raven 
         rhino salmon seal shark sheep skunk sloth snake spider 
         stork swan tiger toad trout turkey turtle weasel whale wolf 
-        wombat zebra".split_whitespace().collect();
+        wombat zebra"
+        .split_whitespace()
+        .collect();
 
-    let word = words[rand::thread_rng()
-        .gen_range(0..words.len())]
-        .to_string();
-
-    let word_chars: Vec<char> = word.chars().collect();
-
-    let mut display = word_chars.clone();
-
-    for i in 0..word_chars.len() {
-        display[i] = NOT_GUESSED_YET;
-    }
-
-    loop {
-
-        if guesses == MAX_GUESSES {
-            print!("Você perdeu! :(\nA palavra era {})", word);
-            break;
-        }
-
-        print!("Dê um palpite: ");
-        let mut guess = get_input(stdin);
-        guesses = guesses + 1;
-
-        show_display(display);
-        
-        if true {
-            break;
-        }
-    }
+    words[rand::thread_rng().gen_range(0..=words.len())]
 }
 
-fn show_display(display: Vec<char>) {
-    
+fn get_player_input(stdin: &io::Stdin) -> io::Result<char> {
+    print!("\nDê um palpite: ");
+    io::stdout().flush()?;
+
+    let mut buffer = String::new();
+    stdin.read_line(&mut buffer)?;
+
+    Ok(buffer.trim_end().parse::<char>().unwrap())
+}
+
+fn show_display(display: &Vec<char>, guesses: &Vec<char>) {
+    println!("\n\n\n*******************\n\n\n");
+
+    // TODO - Desenhar no indice correto
+    print!("{}   ", graphics::HANGMAN[0]);
+
     for i in 0..display.len() {
         print!("{} ", display[i]);
     }
 
-    println!("Letras já usadas: ");
+    print!("\n\nLetras já usadas: ");
+    for i in 0..guesses.len() {
+        print!("{} ", guesses[i]);
+    }
 }
 
-fn get_input(stdin: io::Stdin) -> io::Result<char> {
-    Ok('a')
-    // let mut buffer = String::new();
-    // stdin.read_line(&mut buffer)?;
+fn victory(word: &str, guesses: &Vec<char>) -> bool {
+    if word.len() != guesses.len() {
+        return false;
+    }
 
-    // Ok((buffer.to_owned().chars().collect())[0])
+    for letter in word.chars() {
+        if !guesses.contains(&letter) {
+            return false;
+        }
+    }
+    println!("Você venceu, parabéns!");
+    true
+}
 
+fn game_over(number_of_guesses_given: u8) -> bool {
+    number_of_guesses_given == MAX_GUESSES
 }
