@@ -74,6 +74,7 @@ Forma de pagamento:
 - 4 . Em três vezes.
 - 5 . Em quatro vezes.
 - 6 . A partir de cinco vezes.
+
 Entre com sua opção:
 
 E em seguida ler o código da opção de pagamento e imprimir
