@@ -56,11 +56,11 @@ Desenvolver um algoritmo para ler o valor inteiro da idade de uma pessoa e impri
 ### Exercícios 13
 
 Elaborar um algoritmo para ler o código de um produto e informar a sua origem:
-Código do produto entre 1 e 20: Europa
-Código do produto entre 21 e 40: Ásia
-Código do produto entre 41 e 60: América
-Código do produto entre 61 e 80: África
-Código do produto maior que 80: Paraguai
+- Código do produto entre 1 e 20: Europa
+- Código do produto entre 21 e 40: Ásia
+- Código do produto entre 41 e 60: América
+- Código do produto entre 61 e 80: África
+- Código do produto maior que 80: Paraguai
 
 ## Outros exercícios e desafios
 
