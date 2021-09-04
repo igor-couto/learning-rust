@@ -53,6 +53,15 @@ Os funcionários de uma empresa receberam um aumento de salário: técnicos (có
 
 Desenvolver um algoritmo para ler o valor inteiro da idade de uma pessoa e imprimir uma das mensagens: se a idade é menor que 13: Criança, se maior que 13 e menor que 20: Adolescente, se a idade maior que 20 e menor que 60: Adulto e se idade maior que 60: Idoso.
 
+### Exercícios 13
+
+Elaborar um algoritmo para ler o código de um produto e informar a sua origem:
+Código do produto entre 1 e 20: Europa
+Código do produto entre 21 e 40: Ásia
+Código do produto entre 41 e 60: América
+Código do produto entre 61 e 80: África
+Código do produto maior que 80: Paraguai
+
 ## Outros exercícios e desafios
 
 ### YouCodeThings - When will you turn 100?
