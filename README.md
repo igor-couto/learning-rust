@@ -68,12 +68,12 @@ Para auxiliar os vendedores de uma loja na orientação
 aos clientes sobre as diversas formas de pagamento,
 desenvolver um algoritmo para imprimir o seguinte menu:
 Forma de pagamento:
-- 1. A vista.
-- 2. Cheque para trinta dias.
-- 3. Em duas vezes.
-- 4. Em três vezes.
-- 5. Em quatro vezes.
-- 6. A partir de cinco vezes.
+- 1 . A vista.
+- 2 . Cheque para trinta dias.
+- 3 . Em duas vezes.
+- 4 . Em três vezes.
+- 5 . Em quatro vezes.
+- 6 . A partir de cinco vezes.
 Entre com sua opção:
 
 E em seguida ler o código da opção de pagamento e imprimir
