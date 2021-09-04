@@ -53,7 +53,7 @@ Os funcionários de uma empresa receberam um aumento de salário: técnicos (có
 
 Desenvolver um algoritmo para ler o valor inteiro da idade de uma pessoa e imprimir uma das mensagens: se a idade é menor que 13: Criança, se maior que 13 e menor que 20: Adolescente, se a idade maior que 20 e menor que 60: Adulto e se idade maior que 60: Idoso.
 
-### Exercícios 13
+### Exercício 13
 
 Elaborar um algoritmo para ler o código de um produto e informar a sua origem:
 - Código do produto entre 1 e 20: Europa
@@ -61,6 +61,23 @@ Elaborar um algoritmo para ler o código de um produto e informar a sua origem:
 - Código do produto entre 41 e 60: América
 - Código do produto entre 61 e 80: África
 - Código do produto maior que 80: Paraguai
+
+### Ecercícios 14
+
+Para auxiliar os vendedores de uma loja na orientação
+aos clientes sobre as diversas formas de pagamento,
+desenvolver um algoritmo para imprimir o seguinte menu:
+Forma de pagamento:
+- 1. A vista.
+- 2. Cheque para trinta dias.
+- 3. Em duas vezes.
+- 4. Em três vezes.
+- 5. Em quatro vezes.
+- 6. A partir de cinco vezes.
+Entre com sua opção:
+
+E em seguida ler o código da opção de pagamento e imprimir
+uma das mensagens de acordo com a opção lida.
 
 ## Outros exercícios e desafios
 
