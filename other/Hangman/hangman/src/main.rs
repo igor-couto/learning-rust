@@ -13,28 +13,33 @@ fn main() {
     let word = pick_a_word();
     let mut display = "_".repeat(word.len()).chars().collect();
     let mut guesses: Vec<char> = vec![];
+    let mut incorrect_guesses: u8 = 0;
 
-    println!("{}", word);
+    show_display(&display, &guesses, &incorrect_guesses);
 
     loop {
-        show_display(&display, &guesses);
-
         let guess = get_player_input(&stdin).unwrap();
         guesses.push(guess);
 
+        let mut is_match = false;
         for (index, letter) in word.chars().enumerate() {
             if letter == guess {
+                is_match = true;
                 display[index] = guess;
             }
         }
+        if !is_match {
+            incorrect_guesses += 1;
+        }
+
+        show_display(&display, &guesses, &incorrect_guesses);
 
         if victory(word, &guesses) {
-            show_display(&display, &guesses);
             break;
         }
 
-        if game_over(guesses.len() as u8) {
-            println!("Você perdeu! A palavra era {}.\n", word);
+        if game_over(incorrect_guesses as u8) {
+            println!("\nVocê perdeu! A palavra era {}.\n", word);
             break;
         }
     }
@@ -66,11 +71,10 @@ fn get_player_input(stdin: &io::Stdin) -> io::Result<char> {
     Ok(buffer.trim_end().parse::<char>().unwrap())
 }
 
-fn show_display(display: &Vec<char>, guesses: &Vec<char>) {
+fn show_display(display: &Vec<char>, guesses: &Vec<char>, incorrect_guesses: &u8) {
     println!("\n\n\n*******************\n\n\n");
 
-    // TODO - Desenhar no indice correto
-    print!("{}   ", graphics::HANGMAN[0]);
+    print!("{}   ", graphics::HANGMAN[*incorrect_guesses as usize]);
 
     for i in 0..display.len() {
         print!("{} ", display[i]);
@@ -96,6 +100,6 @@ fn victory(word: &str, guesses: &Vec<char>) -> bool {
     true
 }
 
-fn game_over(number_of_guesses_given: u8) -> bool {
-    number_of_guesses_given == MAX_GUESSES
+fn game_over(incorrect_guesses: u8) -> bool {
+    incorrect_guesses == MAX_GUESSES
 }
