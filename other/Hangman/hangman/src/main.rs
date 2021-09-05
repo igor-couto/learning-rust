@@ -1,16 +1,11 @@
-extern crate rand;
-
-use rand::Rng;
-use std::io::{self, Write};
-
 mod graphics;
+mod input;
+mod words;
 
 const MAX_GUESSES: u8 = 6;
 
 fn main() {
-    let stdin = io::stdin();
-
-    let word = pick_a_word();
+    let word = words::pick_a_word();
     let mut display = "_".repeat(word.len()).chars().collect();
     let mut guesses: Vec<char> = vec![];
     let mut incorrect_guesses: u8 = 0;
@@ -18,7 +13,7 @@ fn main() {
     show_display(&display, &guesses, &incorrect_guesses);
 
     loop {
-        let guess = get_player_input(&stdin).unwrap();
+        let guess = input::get_player_input().unwrap();
         guesses.push(guess);
 
         let mut is_match = false;
@@ -43,32 +38,6 @@ fn main() {
             break;
         }
     }
-}
-
-fn pick_a_word() -> &'static str {
-    // TODO - ler a partir do arquivo
-
-    let words: Vec<&str> = "ant baboon badger bat bear beaver camel cat clam cobra cougar
-        coyote crow deer dog donkey duck eagle ferret fox frog goat 
-        goose hawk lion lizard llama mole monkey moose mouse mule newt 
-        otter owl panda parrot pigeon python rabbit ram rat raven 
-        rhino salmon seal shark sheep skunk sloth snake spider 
-        stork swan tiger toad trout turkey turtle weasel whale wolf 
-        wombat zebra"
-        .split_whitespace()
-        .collect();
-
-    words[rand::thread_rng().gen_range(0..=words.len())]
-}
-
-fn get_player_input(stdin: &io::Stdin) -> io::Result<char> {
-    print!("\nDê um palpite: ");
-    io::stdout().flush()?;
-
-    let mut buffer = String::new();
-    stdin.read_line(&mut buffer)?;
-
-    Ok(buffer.trim_end().parse::<char>().unwrap())
 }
 
 fn show_display(display: &Vec<char>, guesses: &Vec<char>, incorrect_guesses: &u8) {
