@@ -5,7 +5,7 @@ mod words;
 const MAX_GUESSES: u8 = 6;
 
 pub fn run() {
-    let word: &str = words::pick_a_word();
+    let word: String = words::pick_a_word();
     let mut display: Vec<char> = "_".repeat(word.len()).chars().collect::<Vec<_>>();
     let mut guesses: Vec<char> = vec![];
     let mut incorrect_guesses: u8 = 0;
@@ -29,7 +29,7 @@ pub fn run() {
 
         show_display(&display, &guesses, &incorrect_guesses);
 
-        if victory(word, &guesses) {
+        if victory(&word, &guesses) {
             break;
         }
 
