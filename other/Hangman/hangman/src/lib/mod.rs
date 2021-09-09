@@ -13,7 +13,14 @@ pub fn run() {
     show_display(&display, &guesses, &incorrect_guesses);
 
     loop {
-        let guess = input::get_player_input().unwrap();
+        let guess = match input::get_player_input() {
+            Ok(value) => value,
+            Err(e) => {
+                println!("{}", e);
+                continue;
+            }
+        };
+
         guesses.push(guess);
 
         let mut is_match = false;

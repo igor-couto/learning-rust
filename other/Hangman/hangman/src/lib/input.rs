@@ -1,6 +1,7 @@
+use std::error::Error;
 use std::io::{self, Write};
 
-pub fn get_player_input() -> io::Result<char> {
+pub fn get_player_input() -> Result<char, Box<dyn Error>> {
     let stdin = io::stdin();
 
     print!("\nDê um palpite: ");
@@ -9,15 +10,10 @@ pub fn get_player_input() -> io::Result<char> {
     let mut buffer = String::new();
     stdin.read_line(&mut buffer)?;
 
-    let character: &char = &buffer
-        .trim_end()
-        .parse::<char>()
-        .unwrap()
-        .to_ascii_lowercase();
+    let character: &char = &buffer.trim_end().parse::<char>()?.to_ascii_lowercase();
 
-    // TODO - Esse é um erro recuperável. Não devia fazer panic
     if !character.is_ascii_alphabetic() {
-        panic!("Letra inválida.");
+        return Err("O que você digitou não é uma letra válida, tente novamente".into());
     }
 
     Ok(character.to_owned())
