@@ -62,7 +62,7 @@ Elaborar um algoritmo para ler o código de um produto e informar a sua origem:
 - Código do produto entre 61 e 80: África
 - Código do produto maior que 80: Paraguai
 
-### Ecercício 14
+### Exercício 14
 
 Para auxiliar os vendedores de uma loja na orientação
 aos clientes sobre as diversas formas de pagamento,
